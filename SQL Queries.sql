@@ -88,3 +88,13 @@ ORDER BY AGE ASC
 Update Employees
 SET FirstName = 'First Name'
 --WHERE ID = 7
+
+/*
+Truncate Vs Delete
+*/
+
+-- Truncate delets all the data in a table and cannot ,No WHERE Clause on Truncate
+TRUNCATE Table Employees
+
+-- Deletes records if matches either of the conditions
+DELETE FROM Employees where ID = 2 OR FirstName = 'Mounika'
