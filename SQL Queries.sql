@@ -2,10 +2,8 @@
 USE Master
 GO
 
-
- IF NOT EXISTS(SELECT * FROM sys.tables
-	WHERE SCHEMA_NAME(SCHEMA_ID) = 'dbo'
-	AND NAME = 'Employees')
+--Check if a table exists and create one if its not in the DB.
+ IF NOT EXISTS(SELECT * FROM sys.tables WHERE SCHEMA_NAME(SCHEMA_ID) = 'dbo' AND NAME = 'Employees')
 	--Creates a users table.
 	CREATE TABLE Employees
 	(
@@ -15,7 +13,10 @@ GO
 		FirstName VARCHAR(50) NOT NULL,
 		LastName VARCHAR(50) NOT NULL,
 	)
-GO
+
+-- ALternative for the above to check if a table exists.
+SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA  = 'dbo' AND TABLE_NAME = 'Employees'
+
 --Inserts data into the tables
 INSERT INTO Employees(FirstName, LastName) VALUES ('Charde', 'Marshall');
 INSERT INTO Employees(FirstName, LastName, Age) VALUES ('Garrett ', 'Winters',24);
