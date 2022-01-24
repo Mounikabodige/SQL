@@ -82,8 +82,13 @@ ORDER BY AGE ASC
 - Change Column Type
 -
 */
- 
+-- Change Column Type
+ALTER TABLE Employees
+ALTER COLUMN Address INT
 
+ALTER TABLE Employees
+ALTER COLUMN Address VARCHAR(250) NULL
+ 
 
 /* Changes entire FirstName column data to 'First Name' without where*/
 Update Employees
