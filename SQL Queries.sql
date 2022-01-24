@@ -81,8 +81,7 @@ ORDER BY AGE ASC
 - Change Column Type
 -
 */
-ALTER TABLE Emploees
-ALTER COLUMN FirstName  
+ 
 
 
 /* Changes entire FirstName column data to 'First Name' without where*/
