@@ -90,15 +90,18 @@ ALTER TABLE Employees
 ALTER COLUMN Address VARCHAR(250) NULL
  
 
-/* Changes entire FirstName column data to 'First Name' without where*/
+/* Upates entire FirstName column data to 'First Name' without where*/
 Update Employees
 SET FirstName = 'First Name'
---WHERE ID = 7
+
+-- Updates First Name to Mounika when satifies where clause.
+Update Employees
+SET FirstName = 'Mounika'
+Where ID = 1 AND FirstName = 'First Name'
 
 /*
 Truncate Vs Delete
 */
-
 -- Truncate delets all the data in a table and cannot ,No WHERE Clause on Truncate
 TRUNCATE Table Employees
 
