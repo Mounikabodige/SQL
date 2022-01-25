@@ -107,3 +107,15 @@ TRUNCATE Table Employees
 
 -- Deletes records if matches either of the conditions
 DELETE FROM Employees where ID = 2 OR FirstName = 'Mounika'
+
+--Primary Key Setup.
+CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED ([EmployeeID] ASC)
+
+/*Assuming there is a countrty table with primary key CountryID, and need a new cloumn in Employee table to map the */
+--Foriegn Key On exsisting table
+ALTER TABLE Employee
+   ADD CONSTRAINT FK_Country FOREIGN KEY (CountryID)
+   REFERENCES Employee (CountryID)
+--Adding Foriegn key to while creating employee table 
+CONSTRAINT FK_Country FOREIGN KEY (CountryID)
+REFERENCES Employee (CountryID)
