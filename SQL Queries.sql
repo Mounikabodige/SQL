@@ -76,6 +76,9 @@ SELECT * FROM Employees
 ORDER BY AGE ASC
 
 
+--Add ne wColumn
+ALTER TABLE Employees
+ADD IsActive BIT DEFAULT 0;
 
 /* 
 - Change Column Name
